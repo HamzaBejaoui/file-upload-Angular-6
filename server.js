@@ -35,6 +35,7 @@ app.get('/api', function (req, res) {
 
 
 app.post('/api/upload', upload.single('photo'), function (req, res) {
+    console.log(req.file);
     if (!req.file) {
         console.log("No file received");
         return res.send({
